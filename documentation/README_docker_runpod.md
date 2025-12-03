@@ -42,10 +42,10 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
 
 ### Build for
 
-| Processor | Compute Capability | SM |
+| Processor example | Compute Capability | SM |
 |------------|-----------------|-----------|
-| A40  | 8.6 | sm_86 |
-| L40S | 8.9 | sm_89 |
+| RTX A5000  | 8.6 | sm_86 |
+| RTX 4090 | 8.9 | sm_89 |
 
 ## Environment Variables  
 

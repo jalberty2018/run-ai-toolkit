@@ -2,7 +2,7 @@
 
 ## Documentation
 
-- [Training example](docs/ai-toolkit_training_example.md)
+- [Start](docs/ai-toolkit_tutorial.md)
 - [Resources](docs/ai-toolkit_resources.md)
 - [Hardware Requirements](docs/ai-toolkit_hardware.md)
 - [Image setup](docs/ai-toolkit_image_setup.md)
