@@ -99,22 +99,15 @@ else
 fi
 
 if [[ "$HAS_CUDA" -eq 1 ]]; then  	
-    echo "✅ Starting Tensorboard service (CUDA available)"
-
-	# Start TensorBoard on port 6006
-    tensorboard --logdir /workspace/output --host 0.0.0.0 &
-	sleep 1
-	
+    # Start TensorBoard on port 6006
+	echo "✅ Starting Tensorboard service --logdir /workspace/output/logs_tensorboard"
+    tensorboard --logdir /workspace/output/logs_tensorboard --host 0.0.0.0 &
+	sleep 5
 else
     echo "❌ ERROR: PyTorch CUDA driver mismatch or unavailable, tensorboard not started"
 fi
 
-if [[ "$HAS_CUDA" -eq 1 ]]; then  
-	# Start TensorBoard on port 6006
-	echo "✅ Starting Tensorboard service --logdir /workspace/output/logs_tensorboard"
-    tensorboard --logdir /workspace/output/logs_tensorboard --host 0.0.0.0 &
-	sleep 5
-  	
+if [[ "$HAS_CUDA" -eq 1 ]]; then    	
 	# Start AI-toolkit interface 
     echo "✅ Starting ai-toolkit UI interface"
     if [[ -z "${AI_TOOLKIT_AUTH:-}" ]]; then           
@@ -122,6 +115,9 @@ if [[ "$HAS_CUDA" -eq 1 ]]; then
     else
 		echo "ℹ️ Password set with AI_TOOLKIT_AUTH"
 	fi
+	
+	AI_TOOLKIT_VERSION=$(grep -oP '(?<=VERSION = ")[0-9\.]+' /ai-toolkit/version.py)
+    echo "🔰 AI-Toolkit version: $AI_TOOLKIT_VERSION"
 	
 	cd /ai-toolkit/ui && npm run start &
 	
@@ -198,11 +194,14 @@ else:
 PY
 
 if [[ "$HAS_CUDA" -eq 1 ]]; then 
-    echo "🎉 Provisioning done, ready to train AI model 🎉"
+    echo "🎉 Provisioning done, ready to train AI models 🎉"
     
     if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then
         echo "ℹ️ Connect to to services as displayed it the runpod console."
     fi
+	
+	echo "ℹ️ ⚠️Important: Change directories in AI-Toolkit UI's settings to /workspace/output/⚠️"
+	
 else
     echo "ℹ️ Running error diagnosis"
 

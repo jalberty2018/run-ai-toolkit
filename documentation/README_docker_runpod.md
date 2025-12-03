@@ -10,7 +10,7 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
   - **Hugging Face** token for model access.
   - **ai-toolkit UI** password
 
-## Deployment on RunPod.io
+## Deployment on RunPod
 
 [**👉 AI Toolkit**](https://console.runpod.io/deploy?template=3cmazei34j&ref=se4tkc5o)
 

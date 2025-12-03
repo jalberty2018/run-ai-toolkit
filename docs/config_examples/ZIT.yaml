@@ -87,7 +87,7 @@ config:
         layer_offloading: false
         layer_offloading_text_encoder_percent: 1
         layer_offloading_transformer_percent: 1
-        assistant_lora_path: "ostris/zimage_turbo_training_adapter/zimage_turbo_training_adapter_v1.safetensors"
+        assistant_lora_path: "ostris/zimage_turbo_training_adapter/zimage_turbo_training_adapter_v2.safetensors"
       sample:
         sampler: "flowmatch"
         sample_every: 354
