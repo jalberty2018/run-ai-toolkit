@@ -39,7 +39,7 @@ mkdir -p /workspace/datasets
 # GPU detection
 echo "ℹ️ Testing GPU/CUDA provisioning"
 
-# GPU detection Runpod.io
+# GPU detection Runpod
 HAS_GPU_RUNPOD=0
 if [[ -n "${RUNPOD_GPU_COUNT:-}" && "${RUNPOD_GPU_COUNT:-0}" -gt 0 ]]; then
   HAS_GPU_RUNPOD=1
@@ -193,6 +193,8 @@ else:
     print("PyTorch: not available")
 PY
 
+echo "ℹ️ Connections and/or diagnostics"
+
 if [[ "$HAS_CUDA" -eq 1 ]]; then 
     echo "🎉 Provisioning done, ready to train AI models 🎉"
     
@@ -243,7 +245,7 @@ else
 
 	echo "❌ Pytorch CUDA driver error/mismatch/not available"
     if [[ "$HAS_GPU_RUNPOD" -eq 1 ]]; then
-        echo "⚠️ [SOLUTION] Deploy pod on another region ⚠️"
+       echo "⚠️ [SOLUTION] Deploy pod on another region then ${RUNPOD_DC_ID:-unknown} ⚠️"
     fi
 fi
 

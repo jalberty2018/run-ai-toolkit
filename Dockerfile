@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1.7
+# run-ai-toolkit
 FROM ls250824/pytorch-cuda-ubuntu-develop:08112025
 
 # Set working directory
@@ -69,7 +70,7 @@ EXPOSE 9000 6006 8675
 
 # Labels
 LABEL org.opencontainers.image.title="run-ai-toolkit" \
-      org.opencontainers.image.description="Pytorch 2.9 CUDA 12.8 devel + Ubuntu 22.04 + Python + code-server + ai-toolkit" \
+      org.opencontainers.image.description="Pytorch 2.9.1 CUDA 12.8 devel + Ubuntu 22.04 + Python + code-server + ai-toolkit" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-ai-toolkit" \
       org.opencontainers.image.licenses="MIT"
 
