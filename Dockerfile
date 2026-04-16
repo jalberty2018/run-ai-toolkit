@@ -41,7 +41,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
       ./flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl \
       ./sageattention-2.2.0-cp311-cp311-linux_x86_64.whl \
-      "huggingface_hub[cli]" onnx tensorboard && \
+      "huggingface_hub" onnx && \
     rm -f flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl \
           sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 
@@ -66,11 +66,11 @@ RUN npm install && \
 WORKDIR /workspace
 
 # Expose ports (assuming the application runs on port 3000)
-EXPOSE 9000 6006 8675
+EXPOSE 9000 8675
 
 # Labels
 LABEL org.opencontainers.image.title="run-ai-toolkit" \
-      org.opencontainers.image.description="Pytorch 2.9.1 CUDA 12.8 devel + Ubuntu 22.04 + Python + code-server + ai-toolkit" \
+      org.opencontainers.image.description="Pytorch 2.9.1 CUDA 12.8 devel + Ubuntu 22.04 + code-server + ai-toolkit" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-ai-toolkit" \
       org.opencontainers.image.licenses="MIT"
 

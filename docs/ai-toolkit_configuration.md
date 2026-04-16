@@ -15,6 +15,5 @@
 | Service         | Port          |
 |-----------------|---------------| 
 | **ai-toolkit UI** | `8675` (HTTP)|
-| **Tensorboard** | `6006` (HTTP) |
 | **Code Server** | `9000` (HTTP) |
 | **SSH/SCP**     | `22`   (TCP)  |

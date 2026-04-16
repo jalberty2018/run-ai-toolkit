@@ -22,20 +22,6 @@
 7z x x.7z
 ```
 
-## Split-Join
-
-### Split
-
-```bash
-split -n 3 x.7z x_part
-```
-
-### Join files
-
-```bash
-cat x_part* > x.7z
-```
-
 ## Bash commands
 
 ```bash

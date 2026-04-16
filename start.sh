@@ -33,7 +33,6 @@ done
 
 # Create workspace directories if they don’t exist
 mkdir -p /workspace/output
-mkdir -p /workspace/output/logs_tensorboard
 mkdir -p /workspace/datasets
 
 # GPU detection
@@ -98,15 +97,6 @@ else
   echo "⚠️ Python not found – assuming no CUDA"
 fi
 
-if [[ "$HAS_CUDA" -eq 1 ]]; then  	
-    # Start TensorBoard on port 6006
-	echo "✅ Starting Tensorboard service --logdir /workspace/output/logs_tensorboard"
-    tensorboard --logdir /workspace/output/logs_tensorboard --host 0.0.0.0 &
-	sleep 5
-else
-    echo "❌ ERROR: PyTorch CUDA driver mismatch or unavailable, tensorboard not started"
-fi
-
 if [[ "$HAS_CUDA" -eq 1 ]]; then    	
 	# Start AI-toolkit interface 
     echo "✅ Starting ai-toolkit UI interface"
@@ -138,7 +128,7 @@ if [[ "$HAS_CUDA" -eq 1 ]]; then
         sleep 5
     done
 
-    # Success message only when ComfyUI responded
+    # Success message only when ai-toolkit responded
     if curl -s http://127.0.0.1:8675 > /dev/null; then
         echo "🎉 ai-toolkit is online!"
     fi
@@ -204,7 +194,6 @@ if [[ "$HAS_CUDA" -eq 1 ]]; then
 	    declare -A SERVICES=(
 	      ["Code-Server"]=9000
 	      ["AI-Toolkit"]=8675
-		  ["Tensorboard"]=6006
 	    )
 	
 	    # Local health checks (inside the pod)
@@ -234,7 +223,7 @@ if [[ "$HAS_CUDA" -eq 1 ]]; then
 		cat /root/.config/code-server/config.yaml        
     fi
 	
-	echo "ℹ️ ⚠️Important: Change directories in AI-Toolkit UI's settings to /workspace/output/⚠️"
+	echo "ℹ️ ⚠️Important: Change directories in AI-Toolkit UI's settings to /workspace/output/ & /workspace/datasets/ ⚠️"
 	
 else
     echo "ℹ️ Running error diagnosis"

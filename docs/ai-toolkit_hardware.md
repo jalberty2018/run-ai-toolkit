@@ -1,5 +1,5 @@
 # 💻 Hardware Requirements
 
-- GPU: RTX A5000, RTX 4090, RTX 4000 Ada.
+- GPU: RTX A5000, RTX 4090.
 - Pod volume: 50Gb (models)
-- Workspace: 30 Gb (depending on dataset and output)
+- Workspace: 50 Gb (depending on dataset and output)

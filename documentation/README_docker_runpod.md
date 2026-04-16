@@ -10,15 +10,11 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
   - **Hugging Face** token for model access.
   - **ai-toolkit UI** password
 
-## Deployment on RunPod
-
-[**👉 AI Toolkit**](https://console.runpod.io/deploy?template=3cmazei34j&ref=se4tkc5o)
-
 ### Hardware provisioning recommendation
 
-- GPU: RTX A5000, RTX 4090, RTX 4000 Ada.
+- GPU: RTX A5000, RTX 4090.
 - Pod volume: 50Gb (models)
-- Workspace: 30 Gb (depending on dataset and output)
+- Workspace: 50 Gb (depending on datasets and output)
 
 ## Setup
 
@@ -65,6 +61,5 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
 |-----------------|---------------| 
 | **ai-toolkit UI** | `8675` (HTTP)|
 | **Code Server** | `9000` (HTTP) |
-| **Tensorboard** | `6006` (HTTP) |
 | **SSH/SCP**     | `22`   (TCP)  |
 

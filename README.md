@@ -25,14 +25,6 @@ See below for options.
 
 ![training](images/training.jpg)
 
-### Tensorboard
-
-![tensorboard](images/tensorboard.jpg)
-
-## Template RunPod
-
-[**👉 AI Toolkit**](https://console.runpod.io/deploy?template=3cmazei34j&ref=se4tkc5o)
-
 ## 📚 Documentation
 
 - [⚙️ Start](docs/ai-toolkit_tutorial.md)
