@@ -1,5 +1,7 @@
 # ⚙️ Image setup
 
+## Components
+
 | Component | Version              |
 |-----------|----------------------|
 | OS        | `Ubuntu 22.04 x86_64` |
@@ -9,6 +11,7 @@
 | Triton    | `3.4.0`               |
 | nvcc      | `12.9.0`            |
 | code server    | latest     |
+| AI Toolkit    | latest     |
 
 ## Installed Attentions
 
@@ -18,8 +21,6 @@
 |----------------|----------|
 | flash_attn     | 2.8.3    |
 | sageattention  | 2.2.0    |
-
-### Build for
 
 ### Build for
 

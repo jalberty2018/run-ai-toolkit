@@ -26,9 +26,6 @@ RUN curl -sL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh && \
 
 WORKDIR /
 
-# ref https://en.wikipedia.org/wiki/CUDA
-ENV TORCH_CUDA_ARCH_LIST="8.0 8.6 8.9 9.0 10.0 12.0"
-
 # Pin flash & sage & onnx
 RUN printf "numpy<2\nonnxruntime==0\nflash_attn==2.8.3\nsageattention==2.2.0\n" > /constraints.txt
 
@@ -41,7 +38,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
       ./flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl \
       ./sageattention-2.2.0-cp311-cp311-linux_x86_64.whl \
-      "huggingface_hub" onnx && \
+       onnx && \
     rm -f flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl \
           sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
 
@@ -50,13 +47,13 @@ WORKDIR /
 RUN --mount=type=cache,target=/root/.cache/git \
     git clone https://github.com/ostris/ai-toolkit.git
 
-# Install requirements
+# Install requirements ai-toolkit
 WORKDIR /ai-toolkit
 RUN --mount=type=cache,target=/root/.cache/pip \
   python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
       -r requirements.txt
 
-# Build UI
+# Build UI ai-toolkit
 WORKDIR /ai-toolkit/ui
 RUN npm install && \
     npm run build && \
