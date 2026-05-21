@@ -10,11 +10,13 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
   - **Hugging Face** token for model access.
   - **ai-toolkit UI** password
 
-### Hardware provisioning recommendation
+## Hardware provisioning recommendation
+
+### ZiB and Flux-Klein 9B
 
 - GPU: RTX A5000, RTX 4090.
-- Pod volume: 50Gb (models)
-- Workspace: 50 Gb (depending on datasets and output)
+- Pod volume: 40Gb  (model)
+- Workspace: 20 Gb  (dataset and output)
 
 ## Setup
 
@@ -26,6 +28,7 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
 | CUDA      | `12.8.x`             |
 | Triton    | `3.4.x`              |
 | CodeServer | Latest |
+| ai-toolkit   | Latest |
 
 ## Installed Attentions
 
@@ -45,7 +48,7 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
 
 ## Environment Variables  
 
-## **Authentication Tokens**  
+### **Authentication Tokens**  
 
 | Token        | Environment Variable |
 |--------------|----------------------|

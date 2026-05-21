@@ -15,15 +15,15 @@ This pod downloads models as specified in the **environment variables** set in t
 Ensure that the required environment variables and secrets are correctly set before running the pod.
 See below for options.
 
-## Training Z-Image Turbo Lora on RunPod on RTX A5000
-
-### Console
-
-![runpod](images/runpod.jpg)
+## Training Z-Image Base Lora on RunPod on RTX 4090
 
 ### UI
 
 ![training](images/training.jpg)
+
+### Running on Runpod 
+
+![runpod](images/runpod.jpg)
 
 ## 📚 Documentation
 
