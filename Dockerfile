@@ -5,13 +5,6 @@ FROM ls250824/pytorch-cuda-ubuntu-develop:08112025
 # Set working directory
 WORKDIR /
 
-# Copy start script
-COPY --chmod=755 start.sh onworkspace/docs-on-workspace.sh onworkspace/readme-on-workspace.sh /
-
-# Copy supporting files
-COPY --chmod=664 /documentation/README.md /README.md
-COPY --chmod=644 docs/ /docs
-
 # Install code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
@@ -58,6 +51,12 @@ WORKDIR /ai-toolkit/ui
 RUN npm install && \
     npm run build && \
     npm run update_db
+    
+# Scripts & docs
+WORKDIR /
+COPY --chmod=755 start.sh onworkspace/docs-on-workspace.sh onworkspace/readme-on-workspace.sh /
+COPY --chmod=664 /documentation/README.md /README.md
+COPY --chmod=644 docs/ /docs 
 
 # Set working directory for runtime
 WORKDIR /workspace
