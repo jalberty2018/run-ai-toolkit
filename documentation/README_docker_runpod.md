@@ -18,6 +18,12 @@ A streamlined setup for running **Ostris AI Toolkit** for training models and lo
 - Pod volume: 40Gb  (model)
 - Workspace: 20 Gb  (dataset and output)
 
+### LTX-2.3
+
+- GPU: L40S.
+- Pod volume: 80Gb  (model)
+- Workspace: 20 Gb  (dataset and output)
+
 ## Setup
 
 | Component | Version              |
