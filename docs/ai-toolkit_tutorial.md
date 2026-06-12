@@ -6,9 +6,9 @@
 
 ## Training example
 
-## Z-Image Turbo
+### Z-Image Turbo
 
-![Advance](images/Advanced.jpg)
+![Advanced](images/Advanced.jpg)
 
 - Copy the following example to the show-advanced training tab of the AI-Toolkit UI for editing.
 - [Example](config_examples/ZIT.yaml)
