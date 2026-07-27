@@ -51,12 +51,12 @@ WORKDIR /ai-toolkit/ui
 RUN npm install && \
     npm run build && \
     npm run update_db
-    
+
 # Scripts & docs
 WORKDIR /
 COPY --chmod=755 start.sh onworkspace/docs-on-workspace.sh onworkspace/readme-on-workspace.sh /
 COPY --chmod=664 /documentation/README.md /README.md
-COPY --chmod=644 docs/ /docs 
+COPY --chmod=644 docs/ /docs
 
 # Set working directory for runtime
 WORKDIR /workspace

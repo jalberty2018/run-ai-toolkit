@@ -1,14 +1,14 @@
-# 📚 image resources
+# 📚 Image Resources
 
 ## Websites
 
-- [ai-toolkit Github](https://github.com/ostris/ai-toolkit)
-- [ai-toolkit hf](https://huggingface.co/ostris)
-- [Code server](https://github.com/coder/code-server)
-- [Huggingface hub](https://huggingface.co/docs/huggingface_hub/index)
-- [Flash attention](https://github.com/Dao-AILab/flash-attention)
+- [ai-toolkit GitHub](https://github.com/ostris/ai-toolkit)
+- [ai-toolkit on Hugging Face](https://huggingface.co/ostris)
+- [Code Server](https://github.com/coder/code-server)
+- [Hugging Face Hub](https://huggingface.co/docs/huggingface_hub/index)
+- [Flash Attention](https://github.com/Dao-AILab/flash-attention)
 
 ## Tutorial
 
-- [Lora training](https://civitai.com/articles/3105/essential-to-advanced-guide-to-training-a-lora)
+- [LoRA training](https://civitai.com/articles/3105/essential-to-advanced-guide-to-training-a-lora)
 
