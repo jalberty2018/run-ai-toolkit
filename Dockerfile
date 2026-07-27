@@ -22,8 +22,8 @@ WORKDIR /
 RUN printf "numpy<2\nonnxruntime==0\nflash_attn==2.8.3\nsageattention==2.2.0\n" > /constraints.txt
 
 # Download wheels
-RUN wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.3.1/flash_attn-2.8.3-cp312-cp312-linux_x86_64.whl && \
-    wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.3.1/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
+RUN wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.4.0/flash_attn-2.8.3-cp312-cp312-linux_x86_64.whl && \
+    wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.4.0/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 
 # Install and remove wheels
 RUN --mount=type=cache,target=/root/.cache/pip \
