@@ -138,51 +138,6 @@ else
     echo "❌ ERROR: PyTorch CUDA driver mismatch or unavailable"
 fi
 
-# Environment
-echo "ℹ️ Running environment"
-
-python - <<'PY'
-import platform
-
-# Safe imports – don't explode if something is missing
-try:
-    import torch
-except Exception as e:
-    print(f"PyTorch import error: {e}")
-    torch = None
-
-try:
-    import triton
-except Exception:
-    triton = None
-
-try:
-    import onnxruntime as ort
-except Exception:
-    ort = None
-
-print(f"Python: {platform.python_version()}")
-
-if torch is not None:
-    print(f"PyTorch: {torch.__version__}")
-    print(f"CUDA available: {torch.cuda.is_available()}")
-    if torch.cuda.is_available():
-        print(f"  ↳ CUDA runtime: {torch.version.cuda}")
-        print(f"  ↳ GPU(s): {[torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]}")
-        try:
-            import torch.backends.cudnn as cudnn
-            print(f"  ↳ cuDNN: {cudnn.version()}")
-        except Exception:
-            pass
-    print("Torch build info:")
-    try:
-        torch.__config__.show()
-    except Exception:
-        pass
-else:
-    print("PyTorch: not available")
-PY
-
 echo "ℹ️ Connections and/or diagnostics"
 
 if [[ "$HAS_CUDA" -eq 1 ]]; then 
@@ -240,6 +195,51 @@ fi
 
 # Keep the container running
 echo "ℹ️ End script"
+
+# Environment
+echo "ℹ️ Running environment"
+
+python - <<'PY'
+import platform
+
+# Safe imports – don't explode if something is missing
+try:
+    import torch
+except Exception as e:
+    print(f"PyTorch import error: {e}")
+    torch = None
+
+try:
+    import triton
+except Exception:
+    triton = None
+
+try:
+    import onnxruntime as ort
+except Exception:
+    ort = None
+
+print(f"Python: {platform.python_version()}")
+
+if torch is not None:
+    print(f"PyTorch: {torch.__version__}")
+    print(f"CUDA available: {torch.cuda.is_available()}")
+    if torch.cuda.is_available():
+        print(f"  ↳ CUDA runtime: {torch.version.cuda}")
+        print(f"  ↳ GPU(s): {[torch.cuda.get_device_name(i) for i in range(torch.cuda.device_count())]}")
+        try:
+            import torch.backends.cudnn as cudnn
+            print(f"  ↳ cuDNN: {cudnn.version()}")
+        except Exception:
+            pass
+    print("Torch build info:")
+    try:
+        torch.__config__.show()
+    except Exception:
+        pass
+else:
+    print("PyTorch: not available")
+PY
 
 # Keep the container running
 exec sleep infinity
