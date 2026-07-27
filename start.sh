@@ -3,6 +3,15 @@
 echo "ℹ️ Pod run-ai-toolkit started"
 echo "ℹ️ Wait until the message 🎉 Provisioning done, ready to train AI models 🎉. is displayed"
 
+# Hugging Face CLI output tuned for RunPod plain logs.
+export NO_COLOR=1
+export HF_HUB_VERBOSITY=warning
+export HF_HUB_DISABLE_PROGRESS_BARS=1
+export HF_HUB_DISABLE_TELEMETRY=1
+export DO_NOT_TRACK=1
+export HF_HUB_DISABLE_UPDATE_CHECK=1
+
+
 # Enable SSH if PUBLIC_KEY is set
 if [[ -n "$PUBLIC_KEY" ]]; then
     mkdir -p ~/.ssh && chmod 700 ~/.ssh

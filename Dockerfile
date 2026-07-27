@@ -52,6 +52,9 @@ RUN npm install && \
     npm run build && \
     npm run update_db
 
+# Update Hugging Face CLI and verify the hf command is available
+RUN hf update && hf version
+
 # Scripts & docs
 WORKDIR /
 COPY --chmod=755 start.sh onworkspace/docs-on-workspace.sh onworkspace/readme-on-workspace.sh /
