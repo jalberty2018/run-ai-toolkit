@@ -5,9 +5,6 @@ FROM ls250824/pytorch-cuda-ubuntu-develop:08112025
 # Set working directory
 WORKDIR /
 
-# Install code-server
-RUN curl -fsSL https://code-server.dev/install.sh | sh
-
 # Install nodejs
 WORKDIR /tmp
 RUN curl -sL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh && \
@@ -34,6 +31,9 @@ RUN --mount=type=cache,target=/root/.cache/pip \
        onnx && \
     rm -f flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl \
           sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
+
+# Install code-server
+RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 # Clone ai-toolkit
 WORKDIR /

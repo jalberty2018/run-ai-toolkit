@@ -1,6 +1,6 @@
 # 💻 Hardware Requirements
 
-## Z-Image Base and Flux-Klein 9B
+## Z-Image Base, Flux-Klein 9B
 
 - GPU: RTX A5000, RTX 4090.
 - Pod volume: 40 GB (model)

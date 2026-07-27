@@ -12,4 +12,3 @@
 
 - Copy the following example to the show-advanced training tab of the AI-Toolkit UI for editing.
 - [Example](config_examples/ZIT.yaml)
-
