@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1.7
 # run-ai-toolkit
-FROM ls250824/pytorch-cuda-ubuntu-develop:08112025
+FROM ls250824/pytorch-cuda-ubuntu-develop:10032026
+
+ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Set working directory
 WORKDIR /
@@ -20,17 +22,17 @@ WORKDIR /
 RUN printf "numpy<2\nonnxruntime==0\nflash_attn==2.8.3\nsageattention==2.2.0\n" > /constraints.txt
 
 # Download wheels
-RUN wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.3.1/flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl && \
-    wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.3.1/sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
+RUN wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.3.1/flash_attn-2.8.3-cp312-cp312-linux_x86_64.whl && \
+    wget -q https://github.com/jalberty2018/run-pytorch-cuda-develop/releases/download/v1.3.1/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 
 # Install and remove wheels
 RUN --mount=type=cache,target=/root/.cache/pip \
     python -m pip install --no-cache-dir --root-user-action ignore -c /constraints.txt \
-      ./flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl \
-      ./sageattention-2.2.0-cp311-cp311-linux_x86_64.whl \
+      ./flash_attn-2.8.3-cp312-cp312-linux_x86_64.whl \
+      ./sageattention-2.2.0-cp312-cp312-linux_x86_64.whl \
        onnx && \
-    rm -f flash_attn-2.8.3-cp311-cp311-linux_x86_64.whl \
-          sageattention-2.2.0-cp311-cp311-linux_x86_64.whl
+    rm -f flash_attn-2.8.3-cp312-cp312-linux_x86_64.whl \
+          sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 
 # Install code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
@@ -69,7 +71,7 @@ EXPOSE 9000 8675
 
 # Labels
 LABEL org.opencontainers.image.title="run-ai-toolkit" \
-      org.opencontainers.image.description="Pytorch 2.9.1 CUDA 12.8 devel + Ubuntu 22.04 + code-server + ai-toolkit" \
+      org.opencontainers.image.description="Pytorch 2.10.0 CUDA 12.8 devel + Ubuntu 24.04 + code-server + ai-toolkit" \
       org.opencontainers.image.source="https://hub.docker.com/r/ls250824/run-ai-toolkit" \
       org.opencontainers.image.licenses="MIT"
 

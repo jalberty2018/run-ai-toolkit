@@ -4,12 +4,12 @@
 
 | Component   | Version               |
 |-------------|-----------------------|
-| OS          | `Ubuntu 22.04 x86_64` |
-| Python      | `3.11.x`              |
-| PyTorch     | `2.9.1`               |
+| OS          | `Ubuntu 24.04 x86_64` |
+| Python      | `3.12.x`              |
+| PyTorch     | `2.10.0`               |
 | CUDA        | `12.8.0`              |
 | Triton      | `3.4.0`               |
-| nvcc        | `12.9.0`              |
+| nvcc        | `12.10.0`              |
 | Code Server | Latest                |
 | AI Toolkit  | Latest                |
 
